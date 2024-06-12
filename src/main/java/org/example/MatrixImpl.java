@@ -3,12 +3,17 @@ package org.example;
 import io.grpc.stub.StreamObserver;
 
 public class MatrixImpl extends MatrixMultiplicationGrpc.MatrixMultiplicationImplBase {
+    private final int serverPort;
 
+    public MatrixImpl(int serverPort) {
+        this.serverPort = serverPort;
+    }
     @Override
     public void multiply(
             MatrixOuterClass.MatrixMultiplicationRequest request,
             StreamObserver<MatrixOuterClass.MatrixMultiplicationReply> responseObserver
     ) {
+        System.out.println("Received multiplication request on server running on port " + serverPort);
         // Extract matrices from request
         MatrixOuterClass.Matrix matrixA = request.getMatrixA();
         MatrixOuterClass.Matrix matrixB = request.getMatrixB();

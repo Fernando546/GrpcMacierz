@@ -8,7 +8,7 @@ import java.io.IOException;
 public class MatrixClient {
     private static final String SERVER1_ADDRESS = "localhost:2002";
     private static final String SERVER2_ADDRESS = "localhost:2003";
-    private static final int MATRIX_SIZE = 4;
+    private static final int MATRIX_SIZE = 20;
 
     public static void main(String[] args) throws IOException, InterruptedException {
         // Setup servers

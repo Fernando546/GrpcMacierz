@@ -19,7 +19,7 @@ public class MatrixServer {
 
     private static Server setupServer(int serverPort) {
         return ServerBuilder.forPort(serverPort)
-                .addService(new MatrixImpl())
+                .addService(new MatrixImpl(serverPort))
                 .build();
     }
 
